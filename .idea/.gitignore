@@ -1,0 +1,43 @@
+# Default ignored files
+/shelf/
+/workspace.xml
+
+
+# Editor-based HTTP Client requests
+/httpRequests/
+
+
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+
+
+# Node.js dependencies
+/node_modules/
+
+
+# Build output files
+/dist/
+*.log
+
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+
+# IDE/editor generated files
+.idea/
+.vscode/
+*.iml
+
+
+# Environment-specific settings
+.env
+.env.local
+
+
+# Cache folders created by tools
+.turbo/
+.eslintcache
+*.cache/
