@@ -50,5 +50,5 @@ jobs:
               --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
               --auth-mode login \
               --source calorie-counter-web/dist \
-              --destination '$web'
+              --destination '$web' \
               --overwrite
