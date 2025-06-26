@@ -48,6 +48,6 @@ jobs:
           inlineScript: |
             az storage blob upload-batch \
               --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
-              --auth-mode key \
-              --source ./calorie-counter-web/dist \
+              --auth-mode login \
+              --source calorie-counter-web/dist \
               --destination '$web'
