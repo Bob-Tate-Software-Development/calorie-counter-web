@@ -27,7 +27,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ../
+        working-directory: ./
 
       # Step 4: Build the project
       - name: Build the project
