@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: '23' # Use the appropriate Node.js version
 
+      # Debug step: Print the name of the current directory
+      - name: Print working directory
+        run: pwd
+
       # Debug step: List files in the current directory
       - name: List directory contents
         run: ls -R
