@@ -31,7 +31,7 @@ jobs:
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
-        working-directory: ./calorie-counter-web/calorie-counter-web
+        working-directory: calorie-counter-web
 
       # Step 4: Build the project
       - name: Build the project
