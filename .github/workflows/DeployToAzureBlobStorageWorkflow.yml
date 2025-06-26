@@ -10,29 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout your code
-    - name: Checkout code
-      uses: actions/checkout@v3
+      # Step 1: Checkout your code
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    # Step 2: Set up Node.js
-    - name: Set up Node.js
-      uses: actions/setup-node@v3
-      with:
-        node-version: '23' # Use the appropriate Node.js version
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '23' # Use the appropriate Node.js version
 
-    # Step 3: Install dependencies
-    - name: Install dependencies
-      run: npm install
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: npm install
 
-    # Step 4: Build the project
-    - name: Build the project
-      run: npm run build
+      # Step 4: Build the project
+      - name: Build the project
+        run: npm run build
 
-    # Step 5: Deploy to Azure Blob Storage
-    - name: Deploy to Azure
-      uses: Azure/azure-cli-action@v1
-      with:
-        inlineScript: |
-          az storage blob upload-batch --account-name caloriecounter --source ./calorie-counter-web/dist --destination '$web'
-      env:
-        AZURE_STORAGE_ACCOUNT_KEY: ${{ secrets.AZURE_STORAGE_ACCOUNT_KEY }}
+      # Step 5: Log in to Azure
+      - name: Log in to Azure
+        uses: azure/login@v1
+        with:
+          client-id: ${{ secrets.AZURE_CLIENT_ID }}
+          tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+          client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
+          subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      # Step 6: Deploy to Azure Blob Storage
+      - name: Deploy to Azure Blob Storage
+        run: |
+          az storage blob upload-batch \
+            --account-name ${{ secrets.AZURE_STORAGE_ACCOUNT_NAME }} \
+            --source ./calorie-counter-web/dist \
+            --destination '$web'
