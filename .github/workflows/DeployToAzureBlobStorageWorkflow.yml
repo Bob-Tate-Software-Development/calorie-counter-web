@@ -20,6 +20,10 @@ jobs:
         with:
           node-version: '23' # Use the appropriate Node.js version
 
+      # Debug step: List files in the current directory
+      - name: List directory contents
+        run: ls -R
+
       # Step 3: Install dependencies
       - name: Install dependencies
         run: npm install
