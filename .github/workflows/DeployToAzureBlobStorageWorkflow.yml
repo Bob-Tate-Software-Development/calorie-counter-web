@@ -51,3 +51,4 @@ jobs:
               --auth-mode login \
               --source calorie-counter-web/dist \
               --destination '$web'
+              --overwrite
