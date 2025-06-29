@@ -27,7 +27,9 @@ jobs:
       # Step 3: Install dependencies
       - name: Install Dependencies
         run: npm install
+        working-directory: calorie-counter-web
 
       # Step 4: Run tests
       - name: Run Tests
         run: npm test
+        working-directory: calorie-counter-web
