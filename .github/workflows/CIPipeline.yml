@@ -1,0 +1,35 @@
+name: CI Pipeline
+
+# Trigger the workflow on pull requests targeting the main branch
+on:
+  pull_request:
+    branches:
+      - main
+
+# Define the jobs to run
+jobs:
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+
+    # Steps to execute
+    steps:
+      # Step 1: Check out the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18  # Specify the version of Node.js to use
+
+      # Step 3: Install dependencies
+      - name: Install Dependencies
+        run: npm install
+        working-directory: calorie-counter-web
+
+      # Step 4: Run tests
+      - name: Run Tests
+        run: npm test
+        working-directory: calorie-counter-web
