@@ -1,24 +1,75 @@
 # Logs
-logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-lerna-debug.log*
+     logs
+     *.log
+     npm-debug.log*
+     yarn-debug.log*
+     yarn-error.log*
+     pnpm-debug.log*
+     lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
+     # Node.js dependencies (if applicable for your project)
+     node_modules
+     dist
+     dist-ssr
+     *.local
 
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+     # Editor directories and files
+     .vscode/*
+     !.vscode/extensions.json
+     .idea
+     .DS_Store
+     *.suo
+     *.ntvs*
+     *.njsproj
+     *.sln
+     *.sw?
+
+     # Build directories
+     bin/
+     obj/
+     out/
+     *.exe
+     *.dll
+     *.pdb
+     *.app
+     *.ipa
+     *.dSYM
+     *.o
+     *.a
+     *.lib
+     *.so
+     *.jar
+     *.war
+     *.apk
+     *.class
+
+     # Generated files (by frameworks/tools)
+     *.generated.cs
+     *.g.*
+
+     # NuGet packages
+     *.nuget/
+     .nuget/
+     packages/
+
+     # User-specific files
+     *.user
+     *.userosscache
+     *.sln.docstates
+
+     # Azure
+     .localhistory/
+     *.Publish.xml
+     .publishsettings
+     .env
+
+     # ASP.NET Scaffolding
+     ScaffoldingReadMe.txt
+
+     # Visual Studio Code backups
+     .vscode/*.code-workspace
+
+     # Visual Studio Code Analytics
+     .vscode/analyzerconfig
+     .vscode/TestResults/
+     vscode/.vs/*
