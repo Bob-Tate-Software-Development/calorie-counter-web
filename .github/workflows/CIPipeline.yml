@@ -29,7 +29,18 @@ jobs:
         run: npm install
         working-directory: calorie-counter-web
 
-      # Step 4: Run tests
+      # Step 4: Run javascript tests
       - name: Run Tests
         run: npm test
         working-directory: calorie-counter-web
+
+      # Step 5: Set up .NET SDK
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: 9.0.x  # Specify the .NET SDK version to install
+
+      # Step 6: Run .NET tests
+      - name: Run .NET Tests
+        run: dotnet test
+        working-directory: api
